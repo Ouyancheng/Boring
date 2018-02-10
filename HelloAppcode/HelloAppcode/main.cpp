@@ -7,11 +7,15 @@
 //
 
 #include <cstdio>
+#include <memory>
 class ExampleClass {
 public:
     ExampleClass() {}
     int func(int a, int b) {
         return (a + b) * 2;
+    }
+    void print() {
+        printf("This is an example class\n");
     }
 };
 template <typename T, typename ...Args>
@@ -39,6 +43,7 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     // std::cout << "Hello, World!\n";
     ExampleClass exampleClass;
+    auto uptrec = std::make_unique<ExampleClass>();
     printf("%d\n", callFunction(add, 1, 2));
     printf("%lf\n", callFunction([](auto a, auto b) {return a * b;}, 4, 4.3));
     printf("%d\n", callFunction(bindMemberFunc(&ExampleClass::func, exampleClass), 1, 2));
@@ -47,6 +52,17 @@ int main(int argc, const char * argv[]) {
     auto bmf = bindMemberFunc(&ExampleClass::func, exampleClass);
     auto bmf2 = bmf;
     printf("%d\n", &(bmf.c) == &(bmf2.c));
+    auto uptrbmf = std::make_unique<decltype(bindMemberFunc(&ExampleClass::func, *uptrec))>(
+            bindMemberFunc(&ExampleClass::func, *uptrec)
+    );
+    auto ptrbmf = new decltype(bindMemberFunc(&ExampleClass::func, *uptrec))(
+            bindMemberFunc(&ExampleClass::func, *uptrec)
+    );
+    printf("%d\n", &(uptrbmf->c) == &(ptrbmf->c));
+    delete ptrbmf;
+    uptrbmf.reset();
+    uptrec->print();
+
     return 0;
 
 }
