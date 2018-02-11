@@ -59,12 +59,25 @@ public:
     FuncWrapper(T(func)(Args...)) :
             func(reinterpret_cast<universal_func_t*>(universal_func<T(Args...)>)),
             func_ptr((char*)func),
+            copy_constructor(reinterpret_cast<void*(*)(void*)>(do_not_copy)),
             destructor(reinterpret_cast<void(*)(void*)>(do_nothing)) {}
     template <typename C>
     FuncWrapper(const C &func) :
             func(reinterpret_cast<universal_func_t*>(universal_func<C>)),
             func_ptr((char*)new C(func)),
+            copy_constructor(reinterpret_cast<void*(*)(void*)>(deep_copy_func_ptr<C>)),
             destructor(reinterpret_cast<void(*)(void*)>(delete_func_ptr<C>)){}
+    FuncWrapper(FuncWrapper<T(Args...)> &another) {
+        // fprintf(stderr, "Construct");
+        this->func = (universal_func_t*)another.func;
+        this->func_ptr = another.copy_constructor(another.func_ptr);
+        this->copy_constructor = another.copy_constructor;
+        this->destructor = another.destructor;
+    }
+    FuncWrapper(FuncWrapper<T(Args...)> &&another) {
+        this->func_ptr = another.func_ptr;
+        another.func_ptr = nullptr;
+    }
     ~FuncWrapper() {
         destructor(func_ptr);
     }
@@ -77,12 +90,19 @@ private:
         return (*function)(std::forward<Args>(args)...);
     }
     template <typename C>
+    static void *deep_copy_func_ptr(C *func_ptr) {
+        // fprintf(stderr, "deep cpy");
+        return new C(*(C*)func_ptr);
+    }
+    static void *do_not_copy(void *func_ptr) { return func_ptr; }
+    template <typename C>
     static void delete_func_ptr(void *func_ptr) {
         delete ((C*)func_ptr);
     }
     static void do_nothing(void *func_ptr) {}
     universal_func_t *func;
     void *func_ptr;
+    void*(*copy_constructor)(void *ptr);
     void(*destructor)(void *ptr);
 };
 void testFuncWrapper() {
@@ -101,6 +121,10 @@ void testFuncWrapper() {
     printf("%d\n", fw5((b), (c)));
     auto fw6 = FuncWrapper<int(int,int)>([=](int a, int b){return a + b;});
     printf("%d\n", fw6(1, 2));
+    auto fw7 = fw6;
+    auto fw8 = fw;
+    printf("%d\n", fw7(1, 2));
+    printf("%d\n", fw8(1, 2));
 }
 void testCallFunction() {
     ExampleClass exampleClass;
