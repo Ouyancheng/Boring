@@ -56,7 +56,14 @@ T1 nochange(T1 &a) {
 template <typename T>
 class FuncWrapper {
 public:
-    FuncWrapper() = delete;
+    FuncWrapper(T func) : func(func) {}
+    template <typename ...Args>
+    auto operator ()(Args&&... args) {
+        return func(args...);
+    }
+
+private:
+    T func;
 };
 template <typename T, typename ...Args>
 class FuncWrapper<T(Args...)> {
@@ -86,6 +93,10 @@ template <typename T, typename C, typename ...Args>
 FuncWrapper<BoundMemberFunc<T(C::*)(Args...)>> makeFuncWrapper(BoundMemberFunc<T(C::*)(Args...)> bmf) {
     return FuncWrapper<BoundMemberFunc<T(C::*)(Args...)>>(bmf);
 }
+template <typename T>
+FuncWrapper<T> makeFuncWrapper(T func) {
+    return FuncWrapper<T>(func);
+}
 void testFuncWrapper() {
     ExampleClass exampleClass2;
     auto fw = makeFuncWrapper(add);
@@ -100,6 +111,8 @@ void testFuncWrapper() {
     auto fw5 = makeFuncWrapper(bindMemberFunc(&ExampleClass::universalAdd<int, int>, exampleClass2));
     int b = 128, c = 128;
     printf("%d\n", fw5(b, c));
+    auto fw6 = makeFuncWrapper([=](int a, int b){return a + b;});
+    printf("%d\n", fw6(1, 2));
 }
 void testCallFunction() {
     ExampleClass exampleClass;
@@ -130,6 +143,8 @@ int main(int argc, const char * argv[]) {
     // std::cout << "Hello, World!\n";
     testCallFunction();
     testFuncWrapper();
+    std::function<int(int,int)> func([=](int a, int b) {return a + b;});
+    printf("%d\n", func(1, 2));
     return 0;
 
 }

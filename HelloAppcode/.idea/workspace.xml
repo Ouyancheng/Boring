@@ -12,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="macos_x86_64" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HelloAppcode/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1664">
-              <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+            <state relative-caret-position="-20">
+              <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
               <folding>
                 <element signature="e#121#138#0" expanded="true" />
                 <element signature="e#377#403#0" expanded="true" />
@@ -27,16 +27,42 @@
                 <element signature="e#1105#1147#0" expanded="true" />
                 <element signature="e#1337#1350#0" expanded="true" />
                 <element signature="e#1397#1409#0" expanded="true" />
-                <element signature="e#1478#1508#0" expanded="true" />
-                <element signature="e#1716#1758#0" expanded="true" />
-                <element signature="e#2032#2062#0" expanded="true" />
-                <element signature="e#2177#2219#0" expanded="true" />
+                <element signature="e#1491#1509#0" expanded="true" />
+                <element signature="e#1619#1649#0" expanded="true" />
+                <element signature="e#1857#1899#0" expanded="true" />
+                <element signature="e#2173#2203#0" expanded="true" />
+                <element signature="e#2318#2360#0" expanded="true" />
+                <element signature="e#2540#2552#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functional" pinned="false" current-in-tab="true">
+        <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="1765" column="36" lean-forward="true" selection-start-line="1765" selection-start-column="36" selection-end-line="1765" selection-end-column="36" />
+              <folding>
+                <element signature="e#15283#15301#0" expanded="true" />
+                <element signature="e#15308#15328#0" expanded="true" />
+                <element signature="e#19214#19232#0" expanded="true" />
+                <element signature="e#42723#42734#0" expanded="true" />
+                <element signature="e#43730#43741#0" expanded="true" />
+                <element signature="e#44429#44465#0" expanded="true" />
+                <element signature="e#49587#49630#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>function&lt;</find>
+      <find>function</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -131,12 +157,14 @@
       <workItem from="1518296427014" duration="437000" />
       <workItem from="1518297485330" duration="1005000" />
       <workItem from="1518298697249" duration="4947000" />
-      <workItem from="1518303684472" duration="1522000" />
+      <workItem from="1518303684472" duration="1539000" />
+      <workItem from="1518305777520" duration="470000" />
+      <workItem from="1518306351250" duration="1394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11876000" />
+    <option name="totallyTimeSpent" value="13757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="821" extended-state="0" />
@@ -148,12 +176,12 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843792" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39919892" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -171,6 +199,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
@@ -190,10 +221,12 @@
             <element signature="e#1105#1147#0" expanded="true" />
             <element signature="e#1337#1350#0" expanded="true" />
             <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1478#1508#0" expanded="true" />
-            <element signature="e#1716#1758#0" expanded="true" />
-            <element signature="e#2032#2062#0" expanded="true" />
-            <element signature="e#2177#2219#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#1619#1649#0" expanded="true" />
+            <element signature="e#1857#1899#0" expanded="true" />
+            <element signature="e#2173#2203#0" expanded="true" />
+            <element signature="e#2318#2360#0" expanded="true" />
+            <element signature="e#2540#2552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -212,10 +245,12 @@
             <element signature="e#1105#1147#0" expanded="true" />
             <element signature="e#1337#1350#0" expanded="true" />
             <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1478#1508#0" expanded="true" />
-            <element signature="e#1716#1758#0" expanded="true" />
-            <element signature="e#2032#2062#0" expanded="true" />
-            <element signature="e#2177#2219#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#1619#1649#0" expanded="true" />
+            <element signature="e#1857#1899#0" expanded="true" />
+            <element signature="e#2173#2203#0" expanded="true" />
+            <element signature="e#2318#2360#0" expanded="true" />
+            <element signature="e#2540#2552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -234,10 +269,12 @@
             <element signature="e#1105#1147#0" expanded="true" />
             <element signature="e#1337#1350#0" expanded="true" />
             <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1478#1508#0" expanded="true" />
-            <element signature="e#1716#1758#0" expanded="true" />
-            <element signature="e#2032#2062#0" expanded="true" />
-            <element signature="e#2177#2219#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#1619#1649#0" expanded="true" />
+            <element signature="e#1857#1899#0" expanded="true" />
+            <element signature="e#2173#2203#0" expanded="true" />
+            <element signature="e#2318#2360#0" expanded="true" />
+            <element signature="e#2540#2552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -256,10 +293,60 @@
             <element signature="e#1105#1147#0" expanded="true" />
             <element signature="e#1337#1350#0" expanded="true" />
             <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1478#1508#0" expanded="true" />
-            <element signature="e#1716#1758#0" expanded="true" />
-            <element signature="e#2032#2062#0" expanded="true" />
-            <element signature="e#2177#2219#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#1619#1649#0" expanded="true" />
+            <element signature="e#1857#1899#0" expanded="true" />
+            <element signature="e#2173#2203#0" expanded="true" />
+            <element signature="e#2318#2360#0" expanded="true" />
+            <element signature="e#2540#2552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HelloAppcode/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#121#138#0" expanded="true" />
+            <element signature="e#377#403#0" expanded="true" />
+            <element signature="e#487#517#0" expanded="true" />
+            <element signature="e#606#618#0" expanded="true" />
+            <element signature="e#688#730#0" expanded="true" />
+            <element signature="e#956#975#0" expanded="true" />
+            <element signature="e#1105#1147#0" expanded="true" />
+            <element signature="e#1337#1350#0" expanded="true" />
+            <element signature="e#1397#1409#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#1619#1649#0" expanded="true" />
+            <element signature="e#1857#1899#0" expanded="true" />
+            <element signature="e#2173#2203#0" expanded="true" />
+            <element signature="e#2318#2360#0" expanded="true" />
+            <element signature="e#2540#2552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HelloAppcode/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#121#138#0" expanded="true" />
+            <element signature="e#377#403#0" expanded="true" />
+            <element signature="e#487#517#0" expanded="true" />
+            <element signature="e#606#618#0" expanded="true" />
+            <element signature="e#688#730#0" expanded="true" />
+            <element signature="e#956#975#0" expanded="true" />
+            <element signature="e#1105#1147#0" expanded="true" />
+            <element signature="e#1337#1350#0" expanded="true" />
+            <element signature="e#1397#1409#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#1619#1649#0" expanded="true" />
+            <element signature="e#1857#1899#0" expanded="true" />
+            <element signature="e#2173#2203#0" expanded="true" />
+            <element signature="e#2318#2360#0" expanded="true" />
+            <element signature="e#2540#2552#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -267,13 +354,6 @@
     <entry file="appcode.project-settings://ec420fa8">
       <provider selected="true" editor-type-id="AppCode.ProjectSettings">
         <state />
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="2313" column="0" lean-forward="false" selection-start-line="2313" selection-start-column="0" selection-end-line="2313" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
@@ -285,8 +365,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HelloAppcode/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1664">
-          <caret line="104" column="30" lean-forward="true" selection-start-line="104" selection-start-column="30" selection-end-line="104" selection-end-column="30" />
+        <state relative-caret-position="-20">
+          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
           <folding>
             <element signature="e#121#138#0" expanded="true" />
             <element signature="e#377#403#0" expanded="true" />
@@ -297,10 +377,28 @@
             <element signature="e#1105#1147#0" expanded="true" />
             <element signature="e#1337#1350#0" expanded="true" />
             <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1478#1508#0" expanded="true" />
-            <element signature="e#1716#1758#0" expanded="true" />
-            <element signature="e#2032#2062#0" expanded="true" />
-            <element signature="e#2177#2219#0" expanded="true" />
+            <element signature="e#1491#1509#0" expanded="true" />
+            <element signature="e#1619#1649#0" expanded="true" />
+            <element signature="e#1857#1899#0" expanded="true" />
+            <element signature="e#2173#2203#0" expanded="true" />
+            <element signature="e#2318#2360#0" expanded="true" />
+            <element signature="e#2540#2552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="1765" column="36" lean-forward="true" selection-start-line="1765" selection-start-column="36" selection-end-line="1765" selection-end-column="36" />
+          <folding>
+            <element signature="e#15283#15301#0" expanded="true" />
+            <element signature="e#15308#15328#0" expanded="true" />
+            <element signature="e#19214#19232#0" expanded="true" />
+            <element signature="e#42723#42734#0" expanded="true" />
+            <element signature="e#43730#43741#0" expanded="true" />
+            <element signature="e#44429#44465#0" expanded="true" />
+            <element signature="e#49587#49630#0" expanded="true" />
           </folding>
         </state>
       </provider>
