@@ -12,37 +12,45 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="macos_x86_64" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HelloAppcode/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
-              <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+            <state relative-caret-position="321">
+              <caret line="74" column="25" lean-forward="true" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
               <folding>
                 <element signature="e#121#138#0" expanded="true" />
                 <element signature="e#377#403#0" expanded="true" />
-                <element signature="e#487#517#0" expanded="true" />
-                <element signature="e#606#618#0" expanded="true" />
-                <element signature="e#688#730#0" expanded="true" />
-                <element signature="e#956#975#0" expanded="true" />
-                <element signature="e#1105#1147#0" expanded="true" />
-                <element signature="e#1337#1350#0" expanded="true" />
-                <element signature="e#1397#1409#0" expanded="true" />
-                <element signature="e#1491#1509#0" expanded="true" />
-                <element signature="e#1619#1649#0" expanded="true" />
-                <element signature="e#1857#1899#0" expanded="true" />
-                <element signature="e#2173#2203#0" expanded="true" />
-                <element signature="e#2318#2360#0" expanded="true" />
-                <element signature="e#2540#2552#0" expanded="true" />
+                <element signature="e#531#544#0" expanded="true" />
+                <element signature="e#591#621#0" expanded="true" />
+                <element signature="e#728#752#0" expanded="true" />
+                <element signature="e#786#810#0" expanded="true" />
+                <element signature="e#905#923#0" expanded="true" />
+                <element signature="e#1043#1067#0" expanded="true" />
+                <element signature="e#1175#1187#0" expanded="true" />
+                <element signature="e#1216#1246#0" expanded="true" />
+                <element signature="e#1577#1589#0" expanded="true" />
+                <element signature="e#2007#2019#0" expanded="true" />
+                <element signature="e#2162#2174#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functional" pinned="false" current-in-tab="true">
+      <file leaf-file-name="memory" pinned="false" current-in-tab="false">
+        <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="2394" column="26" lean-forward="false" selection-start-line="2394" selection-start-column="26" selection-end-line="2394" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functional" pinned="false" current-in-tab="false">
         <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="1765" column="36" lean-forward="true" selection-start-line="1765" selection-start-column="36" selection-end-line="1765" selection-end-column="36" />
+            <state relative-caret-position="-203">
+              <caret line="2209" column="6" lean-forward="false" selection-start-line="2209" selection-start-column="6" selection-end-line="2209" selection-end-column="6" />
               <folding>
                 <element signature="e#15283#15301#0" expanded="true" />
                 <element signature="e#15308#15328#0" expanded="true" />
@@ -51,6 +59,11 @@
                 <element signature="e#43730#43741#0" expanded="true" />
                 <element signature="e#44429#44465#0" expanded="true" />
                 <element signature="e#49587#49630#0" expanded="true" />
+                <element signature="e#51921#51952#0" expanded="true" />
+                <element signature="e#51962#51976#0" expanded="true" />
+                <element signature="e#66379#66728#0" expanded="true" />
+                <element signature="e#66938#66954#0" expanded="true" />
+                <element signature="e#69796#69828#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -159,12 +172,12 @@
       <workItem from="1518298697249" duration="4947000" />
       <workItem from="1518303684472" duration="1539000" />
       <workItem from="1518305777520" duration="470000" />
-      <workItem from="1518306351250" duration="1394000" />
+      <workItem from="1518306351250" duration="11984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13757000" />
+    <option name="totallyTimeSpent" value="24347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="821" extended-state="0" />
@@ -202,7 +215,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -214,19 +227,17 @@
           <folding>
             <element signature="e#121#138#0" expanded="true" />
             <element signature="e#377#403#0" expanded="true" />
-            <element signature="e#487#517#0" expanded="true" />
-            <element signature="e#606#618#0" expanded="true" />
-            <element signature="e#688#730#0" expanded="true" />
-            <element signature="e#956#975#0" expanded="true" />
-            <element signature="e#1105#1147#0" expanded="true" />
-            <element signature="e#1337#1350#0" expanded="true" />
-            <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1491#1509#0" expanded="true" />
-            <element signature="e#1619#1649#0" expanded="true" />
-            <element signature="e#1857#1899#0" expanded="true" />
-            <element signature="e#2173#2203#0" expanded="true" />
-            <element signature="e#2318#2360#0" expanded="true" />
-            <element signature="e#2540#2552#0" expanded="true" />
+            <element signature="e#531#544#0" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#728#752#0" expanded="true" />
+            <element signature="e#786#810#0" expanded="true" />
+            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#1043#1067#0" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+            <element signature="e#1216#1246#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#2007#2019#0" expanded="true" />
+            <element signature="e#2162#2174#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -238,19 +249,17 @@
           <folding>
             <element signature="e#121#138#0" expanded="true" />
             <element signature="e#377#403#0" expanded="true" />
-            <element signature="e#487#517#0" expanded="true" />
-            <element signature="e#606#618#0" expanded="true" />
-            <element signature="e#688#730#0" expanded="true" />
-            <element signature="e#956#975#0" expanded="true" />
-            <element signature="e#1105#1147#0" expanded="true" />
-            <element signature="e#1337#1350#0" expanded="true" />
-            <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1491#1509#0" expanded="true" />
-            <element signature="e#1619#1649#0" expanded="true" />
-            <element signature="e#1857#1899#0" expanded="true" />
-            <element signature="e#2173#2203#0" expanded="true" />
-            <element signature="e#2318#2360#0" expanded="true" />
-            <element signature="e#2540#2552#0" expanded="true" />
+            <element signature="e#531#544#0" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#728#752#0" expanded="true" />
+            <element signature="e#786#810#0" expanded="true" />
+            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#1043#1067#0" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+            <element signature="e#1216#1246#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#2007#2019#0" expanded="true" />
+            <element signature="e#2162#2174#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -262,19 +271,17 @@
           <folding>
             <element signature="e#121#138#0" expanded="true" />
             <element signature="e#377#403#0" expanded="true" />
-            <element signature="e#487#517#0" expanded="true" />
-            <element signature="e#606#618#0" expanded="true" />
-            <element signature="e#688#730#0" expanded="true" />
-            <element signature="e#956#975#0" expanded="true" />
-            <element signature="e#1105#1147#0" expanded="true" />
-            <element signature="e#1337#1350#0" expanded="true" />
-            <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1491#1509#0" expanded="true" />
-            <element signature="e#1619#1649#0" expanded="true" />
-            <element signature="e#1857#1899#0" expanded="true" />
-            <element signature="e#2173#2203#0" expanded="true" />
-            <element signature="e#2318#2360#0" expanded="true" />
-            <element signature="e#2540#2552#0" expanded="true" />
+            <element signature="e#531#544#0" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#728#752#0" expanded="true" />
+            <element signature="e#786#810#0" expanded="true" />
+            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#1043#1067#0" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+            <element signature="e#1216#1246#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#2007#2019#0" expanded="true" />
+            <element signature="e#2162#2174#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -286,19 +293,17 @@
           <folding>
             <element signature="e#121#138#0" expanded="true" />
             <element signature="e#377#403#0" expanded="true" />
-            <element signature="e#487#517#0" expanded="true" />
-            <element signature="e#606#618#0" expanded="true" />
-            <element signature="e#688#730#0" expanded="true" />
-            <element signature="e#956#975#0" expanded="true" />
-            <element signature="e#1105#1147#0" expanded="true" />
-            <element signature="e#1337#1350#0" expanded="true" />
-            <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1491#1509#0" expanded="true" />
-            <element signature="e#1619#1649#0" expanded="true" />
-            <element signature="e#1857#1899#0" expanded="true" />
-            <element signature="e#2173#2203#0" expanded="true" />
-            <element signature="e#2318#2360#0" expanded="true" />
-            <element signature="e#2540#2552#0" expanded="true" />
+            <element signature="e#531#544#0" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#728#752#0" expanded="true" />
+            <element signature="e#786#810#0" expanded="true" />
+            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#1043#1067#0" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+            <element signature="e#1216#1246#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#2007#2019#0" expanded="true" />
+            <element signature="e#2162#2174#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -310,19 +315,17 @@
           <folding>
             <element signature="e#121#138#0" expanded="true" />
             <element signature="e#377#403#0" expanded="true" />
-            <element signature="e#487#517#0" expanded="true" />
-            <element signature="e#606#618#0" expanded="true" />
-            <element signature="e#688#730#0" expanded="true" />
-            <element signature="e#956#975#0" expanded="true" />
-            <element signature="e#1105#1147#0" expanded="true" />
-            <element signature="e#1337#1350#0" expanded="true" />
-            <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1491#1509#0" expanded="true" />
-            <element signature="e#1619#1649#0" expanded="true" />
-            <element signature="e#1857#1899#0" expanded="true" />
-            <element signature="e#2173#2203#0" expanded="true" />
-            <element signature="e#2318#2360#0" expanded="true" />
-            <element signature="e#2540#2552#0" expanded="true" />
+            <element signature="e#531#544#0" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#728#752#0" expanded="true" />
+            <element signature="e#786#810#0" expanded="true" />
+            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#1043#1067#0" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+            <element signature="e#1216#1246#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#2007#2019#0" expanded="true" />
+            <element signature="e#2162#2174#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -334,19 +337,17 @@
           <folding>
             <element signature="e#121#138#0" expanded="true" />
             <element signature="e#377#403#0" expanded="true" />
-            <element signature="e#487#517#0" expanded="true" />
-            <element signature="e#606#618#0" expanded="true" />
-            <element signature="e#688#730#0" expanded="true" />
-            <element signature="e#956#975#0" expanded="true" />
-            <element signature="e#1105#1147#0" expanded="true" />
-            <element signature="e#1337#1350#0" expanded="true" />
-            <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1491#1509#0" expanded="true" />
-            <element signature="e#1619#1649#0" expanded="true" />
-            <element signature="e#1857#1899#0" expanded="true" />
-            <element signature="e#2173#2203#0" expanded="true" />
-            <element signature="e#2318#2360#0" expanded="true" />
-            <element signature="e#2540#2552#0" expanded="true" />
+            <element signature="e#531#544#0" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#728#752#0" expanded="true" />
+            <element signature="e#786#810#0" expanded="true" />
+            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#1043#1067#0" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+            <element signature="e#1216#1246#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#2007#2019#0" expanded="true" />
+            <element signature="e#2162#2174#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -356,41 +357,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
-          <caret line="2570" column="31" lean-forward="false" selection-start-line="2570" selection-start-column="31" selection-end-line="2570" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelloAppcode/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-          <folding>
-            <element signature="e#121#138#0" expanded="true" />
-            <element signature="e#377#403#0" expanded="true" />
-            <element signature="e#487#517#0" expanded="true" />
-            <element signature="e#606#618#0" expanded="true" />
-            <element signature="e#688#730#0" expanded="true" />
-            <element signature="e#956#975#0" expanded="true" />
-            <element signature="e#1105#1147#0" expanded="true" />
-            <element signature="e#1337#1350#0" expanded="true" />
-            <element signature="e#1397#1409#0" expanded="true" />
-            <element signature="e#1491#1509#0" expanded="true" />
-            <element signature="e#1619#1649#0" expanded="true" />
-            <element signature="e#1857#1899#0" expanded="true" />
-            <element signature="e#2173#2203#0" expanded="true" />
-            <element signature="e#2318#2360#0" expanded="true" />
-            <element signature="e#2540#2552#0" expanded="true" />
-          </folding>
+          <caret line="2194" column="0" lean-forward="false" selection-start-line="2194" selection-start-column="0" selection-end-line="2194" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="1765" column="36" lean-forward="true" selection-start-line="1765" selection-start-column="36" selection-end-line="1765" selection-end-column="36" />
+        <state relative-caret-position="-203">
+          <caret line="2209" column="6" lean-forward="false" selection-start-line="2209" selection-start-column="6" selection-end-line="2209" selection-end-column="6" />
           <folding>
             <element signature="e#15283#15301#0" expanded="true" />
             <element signature="e#15308#15328#0" expanded="true" />
@@ -399,6 +377,41 @@
             <element signature="e#43730#43741#0" expanded="true" />
             <element signature="e#44429#44465#0" expanded="true" />
             <element signature="e#49587#49630#0" expanded="true" />
+            <element signature="e#51921#51952#0" expanded="true" />
+            <element signature="e#51962#51976#0" expanded="true" />
+            <element signature="e#66379#66728#0" expanded="true" />
+            <element signature="e#66938#66954#0" expanded="true" />
+            <element signature="e#69796#69828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="2394" column="26" lean-forward="false" selection-start-line="2394" selection-start-column="26" selection-end-line="2394" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HelloAppcode/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="74" column="25" lean-forward="true" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+          <folding>
+            <element signature="e#121#138#0" expanded="true" />
+            <element signature="e#377#403#0" expanded="true" />
+            <element signature="e#531#544#0" expanded="true" />
+            <element signature="e#591#621#0" expanded="true" />
+            <element signature="e#728#752#0" expanded="true" />
+            <element signature="e#786#810#0" expanded="true" />
+            <element signature="e#905#923#0" expanded="true" />
+            <element signature="e#1043#1067#0" expanded="true" />
+            <element signature="e#1175#1187#0" expanded="true" />
+            <element signature="e#1216#1246#0" expanded="true" />
+            <element signature="e#1577#1589#0" expanded="true" />
+            <element signature="e#2007#2019#0" expanded="true" />
+            <element signature="e#2162#2174#0" expanded="true" />
           </folding>
         </state>
       </provider>

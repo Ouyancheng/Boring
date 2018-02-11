@@ -23,29 +23,6 @@ public:
         return t1 + t2;
     };
 };
-template <typename T, typename ...Args>
-inline auto callFunction(T func, Args&&... args) {
-    return func(args...);
-}
-template <typename T>
-struct BoundMemberFunc {
-    BoundMemberFunc() = delete;
-};
-template <typename T, typename C, typename ...Args>
-struct BoundMemberFunc<T(C::*)(Args...)> {
-    BoundMemberFunc(T(C::*func)(Args...), C &c) : func(func), c(c) {}
-    // BoundMemberFunc(const BoundMemberFunc<T(C::*)(Args...)> &bmf) : func(bmf.func), c(bmf.c) {}
-    template <typename ...FArgs>
-    auto operator ()(FArgs&&... args) {
-        return (c.*func)(args...);
-    }
-    T(C::*func)(Args...);
-    C &c;
-};
-template <typename T, typename C, typename ...Args>
-BoundMemberFunc<T(C::*)(Args...)> bindMemberFunc(T(C::*func)(Args...), C &c) {
-    return BoundMemberFunc<T(C::*)(Args...)>(func, c);
-}
 int add(int a, int b) {
     return a + b;
 }
@@ -53,65 +30,76 @@ template <typename T1>
 T1 nochange(T1 &a) {
     return a;
 }
-template <typename T>
-class FuncWrapper {
-public:
-    FuncWrapper(T func) : func(func) {}
+template <typename T, typename ...Args>
+inline auto callFunction(T func, Args... args) {
+    return func(std::forward<Args>(args)...);
+}
+template <typename T, typename C>
+struct BoundMemberFunc;
+template <typename T, typename C>
+struct BoundMemberFunc {
+    BoundMemberFunc(T func, C &c) : func(func), c(c) {}
     template <typename ...Args>
-    auto operator ()(Args&&... args) {
-        return func(args...);
+    inline auto operator ()(Args... args) {
+        return (c.*func)(args...);
     }
-
-private:
     T func;
+    C &c;
 };
+template <typename T, typename C>
+BoundMemberFunc<T, C> bindMemberFunc(T func, C &c) {
+    return BoundMemberFunc<T, C>(func, c);
+}
+template <typename T>
+class FuncWrapper;
 template <typename T, typename ...Args>
 class FuncWrapper<T(Args...)> {
+    typedef T(universal_func_t)(void*, Args&&...);
 public:
-    FuncWrapper(T (fn)(Args...)) : func(fn) {}
-    auto operator ()(Args&&... args) {
-        return func(args...);
+    FuncWrapper(T(func)(Args...)) :
+            func(reinterpret_cast<universal_func_t*>(universal_func<T(Args...)>)),
+            func_ptr((char*)func),
+            destructor(reinterpret_cast<void(*)(void*)>(do_nothing)) {}
+    template <typename C>
+    FuncWrapper(const C &func) :
+            func(reinterpret_cast<universal_func_t*>(universal_func<C>)),
+            func_ptr((char*)new C(func)),
+            destructor(reinterpret_cast<void(*)(void*)>(delete_func_ptr<C>)){}
+    ~FuncWrapper() {
+        destructor(func_ptr);
+    }
+    inline auto operator ()(Args... args) {
+        return func(func_ptr, std::forward<Args>(args)...);
     }
 private:
-    T (*func)(Args...);
-};
-template <typename C, typename T, typename ...Args>
-class FuncWrapper<BoundMemberFunc<T(C::*)(Args...)>> {
-public:
-    FuncWrapper(BoundMemberFunc<T(C::*)(Args...)> bmf) : func(bmf) {}
-    auto operator ()(Args&&... args) {
-        return func(args...);
+    template <typename F>
+    inline static T universal_func(F *function, Args&&... args) {
+        return (*function)(std::forward<Args>(args)...);
     }
-private:
-    BoundMemberFunc<T(C::*)(Args...)> func;
+    template <typename C>
+    static void delete_func_ptr(void *func_ptr) {
+        delete ((C*)func_ptr);
+    }
+    static void do_nothing(void *func_ptr) {}
+    universal_func_t *func;
+    void *func_ptr;
+    void(*destructor)(void *ptr);
 };
-template <typename T, typename ...Args>
-FuncWrapper<T(Args...)> makeFuncWrapper(T (func)(Args...)) {
-    return FuncWrapper<T(Args...)>(func);
-}
-template <typename T, typename C, typename ...Args>
-FuncWrapper<BoundMemberFunc<T(C::*)(Args...)>> makeFuncWrapper(BoundMemberFunc<T(C::*)(Args...)> bmf) {
-    return FuncWrapper<BoundMemberFunc<T(C::*)(Args...)>>(bmf);
-}
-template <typename T>
-FuncWrapper<T> makeFuncWrapper(T func) {
-    return FuncWrapper<T>(func);
-}
 void testFuncWrapper() {
     ExampleClass exampleClass2;
-    auto fw = makeFuncWrapper(add);
+    auto fw = FuncWrapper<int(int,int)>(add);
     printf("%d\n", fw(1, 2));
-    auto fw2 = makeFuncWrapper(bindMemberFunc(&ExampleClass::func, exampleClass2));
+    auto fw2 = FuncWrapper<int(int,int)>(bindMemberFunc(&ExampleClass::func, exampleClass2));
     printf("%d\n", fw2(1, 2));
-    auto fw3 = makeFuncWrapper(bindMemberFunc(&ExampleClass::print, exampleClass2));
+    auto fw3 = FuncWrapper<void()>(bindMemberFunc(&ExampleClass::print, exampleClass2));
     fw3();
-    auto fw4 = makeFuncWrapper(nochange<int>);
+    auto fw4 = FuncWrapper<int(int&)>(nochange<int>);
     int a = 1024;
-    printf("%d\n", fw4(a));
-    auto fw5 = makeFuncWrapper(bindMemberFunc(&ExampleClass::universalAdd<int, int>, exampleClass2));
+    printf("%d\n", fw4((a)));
+    auto fw5 = FuncWrapper<int(int&,int&)>(bindMemberFunc(&ExampleClass::universalAdd<int, int>, exampleClass2));
     int b = 128, c = 128;
-    printf("%d\n", fw5(b, c));
-    auto fw6 = makeFuncWrapper([=](int a, int b){return a + b;});
+    printf("%d\n", fw5((b), (c)));
+    auto fw6 = FuncWrapper<int(int,int)>([=](int a, int b){return a + b;});
     printf("%d\n", fw6(1, 2));
 }
 void testCallFunction() {
@@ -141,10 +129,13 @@ void testCallFunction() {
 int main(int argc, const char * argv[]) {
     // insert code here...
     // std::cout << "Hello, World!\n";
-    testCallFunction();
+    // testCallFunction();
     testFuncWrapper();
-    std::function<int(int,int)> func([=](int a, int b) {return a + b;});
-    printf("%d\n", func(1, 2));
+    std::function<int(int&,int&)> func([=](int &a, int &b) {return a + b;});
+    int a = 1, b = 2;
+    printf("%d\n", func(a, b));
+    auto bindf = std::bind(nochange<int>, a);
+    bindf();
     return 0;
 
 }
