@@ -77,6 +77,9 @@ public:
     FuncWrapper(FuncWrapper<T(Args...)> &&another) {
         this->func_ptr = another.func_ptr;
         another.func_ptr = nullptr;
+        this->func = (universal_func_t*)another.func;
+        this->copy_constructor = another.copy_constructor;
+        this->destructor = another.destructor;
     }
     ~FuncWrapper() {
         destructor(func_ptr);
@@ -121,8 +124,8 @@ void testFuncWrapper() {
     printf("%d\n", fw5((b), (c)));
     auto fw6 = FuncWrapper<int(int,int)>([=](int a, int b){return a + b;});
     printf("%d\n", fw6(1, 2));
-    auto fw7 = fw6;
-    auto fw8 = fw;
+    auto fw7 = std::move(fw6);
+    auto fw8 = std::move(fw);
     printf("%d\n", fw7(1, 2));
     printf("%d\n", fw8(1, 2));
 }
