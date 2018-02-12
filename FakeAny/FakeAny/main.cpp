@@ -10,13 +10,13 @@
 #include <vector>
 struct Any {
     struct virtual_holder {
-        virtual void * const get() = 0;
+        virtual void * get() = 0;
         virtual ~virtual_holder() {}
         virtual virtual_holder *clone() = 0;
     };
     template <typename T>
     struct holder : public virtual_holder {
-        virtual void * const get() {
+        virtual void * get() {
             return (void*)&value;
         }
         holder(const T &value) : value(value) {}
@@ -72,7 +72,7 @@ struct Any {
         delete vh;
     }
     template <typename T>
-    static const T &get(const Any &any) {
+    static T &get(const Any &any) {
         return *(T*)(any.vh->get());
     }
 };
@@ -102,7 +102,11 @@ int main(int argc, const char * argv[]) {
     std::cout << Any::get<char*>(a1) << " " << Any::get<char*>(a6) << std::endl;
     std::cout << Any::get<std::vector<int>>(a2)[4] << std::endl;
     std::cout << Any::get<char*>(a3) << " " << Any::get<char*>(a4) << " " << Any::get<char*>(a5) << std::endl;
-
+    
+    Any::get<int>(a0) = 1024;
+    std::cout << Any::get<int>(a0) << std::endl;
+    Any::get<const char*>(a4) = "nice";
+    std::cout << Any::get<char*>(a4) << std::endl;
     return 0;
 
 }
