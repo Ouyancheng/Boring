@@ -43,6 +43,31 @@ struct Any {
         another.vh = nullptr;
     }
 
+    Any &operator =(const Any &another) {
+        delete vh;
+        vh = another.vh->clone();
+        return *this;
+    }
+
+    template <typename T>
+    Any &operator =(const T &value) {
+        delete vh;
+        vh = new holder<T>(value);
+        return *this;
+    }
+    template <typename T>
+    Any &operator =(T value[]) {
+        delete vh;
+        vh = new holder<T*const>(value);
+        return *this;
+    }
+    template <typename T>
+    Any &operator =(std::initializer_list<T> init) {
+        delete vh;
+        vh = new holder<std::vector<T>>(std::move(std::vector<T>(init)));
+        return *this;
+    }
+
     ~Any() {
         delete vh;
     }
@@ -68,6 +93,16 @@ int main(int argc, const char * argv[]) {
     std::cout << Any::get<std::vector<int>>(a4)[0] << std::endl;
     std::cout << Any::get<float>(*Any::get<Any*>(a5)) << std::endl;
     std::cout << Any::get<std::vector<int>>(a6)[1] << std::endl;
+
+    a0 = 4;
+    a1 = a6 = "best";
+    a2 = {1, 2, 3, 5, 8};
+    a3 = a4 = a5 = "excellent";
+    std::cout << Any::get<int>(a0) << std::endl;
+    std::cout << Any::get<char*>(a1) << " " << Any::get<char*>(a6) << std::endl;
+    std::cout << Any::get<std::vector<int>>(a2)[4] << std::endl;
+    std::cout << Any::get<char*>(a3) << " " << Any::get<char*>(a4) << " " << Any::get<char*>(a5) << std::endl;
+
     return 0;
 
 }
