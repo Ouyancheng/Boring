@@ -25,9 +25,9 @@ struct TypeExtractor<T*> {
 };
 template <typename Iterator>
 inline void iterSwap(Iterator &a, Iterator &b) {
-    typename TypeExtractor<Iterator>::value_type temp = (*a);
-    (*a) = (*b);
-    (*b) = temp;
+    typename TypeExtractor<Iterator>::value_type temp = std::move(*a);
+    (*a) = std::move(*b);
+    (*b) = std::move(temp);
 }
 template <typename BidirectionalIterator,
         typename Compare = std::less<typename TypeExtractor<BidirectionalIterator>::value_type>>
