@@ -7,6 +7,9 @@
 //
 
 #include <iostream>
+#include <string>
+using std::string;
+using std::operator""s;
 template <size_t i, typename T, typename ...Args>
 class GetTupleType;
 template <typename T, typename ...Args>
@@ -89,13 +92,13 @@ int main(int argc, const char * argv[]) {
     // std::cout << "Hello, World!\n";
     int a = 4;
     std::cin >> a;
-    auto t = makeTuple(a, 4.3, 'A');
-    Tuple<int, double, char> t1 = t;
+    auto t = makeTuple(a, 4.3, 'A', ("A+"s));
+    auto t1 = t;
     printf("%lf\n", t.next.value);
     printf("%c\n", t.next.next.value);
-    typename GetTupleType<2, Tuple<int, double, char>>::value_t num = 'A';
-    printf("%c\n", num);
-    std::cout << getValue<0>(t1) << std::endl;
+    // typename GetTupleType<2, Tuple<int, double, char>>::value_t num = 'A';
+    // printf("%c\n", num);
+    std::cout << getValue<3>(t1) << std::endl;
     return 0;
 
 }
