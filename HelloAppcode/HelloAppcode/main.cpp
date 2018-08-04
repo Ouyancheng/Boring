@@ -7,6 +7,7 @@
 //
 
 #include <cstdio>
+#include <iostream>
 #include <memory>
 #include <functional>
 class ExampleClass {
@@ -54,19 +55,19 @@ template <typename T>
 class FuncWrapper;
 template <typename T, typename ...Args>
 class FuncWrapper<T(Args...)> {
-    typedef T(universal_func_t)(void*, Args&&...);
+    typedef T(universal_func_t)(void*, Args...);
 public:
     FuncWrapper(T(func)(Args...)) :
             func(reinterpret_cast<universal_func_t*>(universal_func<T(Args...)>)),
             func_ptr((char*)func),
             copy_constructor(reinterpret_cast<void*(*)(void*)>(do_not_copy)),
-            destructor(reinterpret_cast<void(*)(void*)>(do_nothing)) {}
+            destructor(reinterpret_cast<void(*)(void*)>(do_nothing)) {/*puts("call ptr");*/}
     template <typename C>
     FuncWrapper(const C &func) :
             func(reinterpret_cast<universal_func_t*>(universal_func<C>)),
             func_ptr((char*)new C(func)),
             copy_constructor(reinterpret_cast<void*(*)(void*)>(deep_copy_func_ptr<C>)),
-            destructor(reinterpret_cast<void(*)(void*)>(delete_func_ptr<C>)){}
+            destructor(reinterpret_cast<void(*)(void*)>(delete_func_ptr<C>)){/*puts("call generic");*/}
     FuncWrapper(FuncWrapper<T(Args...)> &another) {
         // fprintf(stderr, "Construct");
         this->func = (universal_func_t*)another.func;
@@ -89,7 +90,7 @@ public:
     }
 private:
     template <typename F>
-    inline static T universal_func(F *function, Args&&... args) {
+    inline static T universal_func(F *function, Args... args) {
         return (*function)(std::forward<Args>(args)...);
     }
     template <typename C>
@@ -157,12 +158,17 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     // std::cout << "Hello, World!\n";
     // testCallFunction();
+    
     testFuncWrapper();
-    std::function<int(int&,int&)> func([=](int &a, int &b) {return a + b;});
+    std::function<int(int&,int&)> func = [=](int &a, int &b) {return a + b;};
     int a = 1, b = 2;
     printf("%d\n", func(a, b));
     auto bindf = std::bind(nochange<int>, a);
     bindf();
+    
+    FuncWrapper<int(int)> func2 = [](auto a) {return a;};
+    // std::cout << "Hello World!~" << std::endl;
+
     return 0;
 
 }
